@@ -1,1 +1,0 @@
-# wanko_bot
