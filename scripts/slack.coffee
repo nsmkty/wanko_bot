@@ -1,12 +1,12 @@
-#scripts/slack.coffee
+ï»¿#scripts/slack.coffee
 
 module.exports = (robot) ->
-	robot.hear /‚í‚ñ‚±/i, (msg) ->
+	robot.hear /ã‚ã‚“ã“/i, (msg) ->
 		username = msg.message.user.name
-		msg.send username + "‚³‚ñAŒÄ‚ñ‚¾‚í‚ñH"
+		msg.send username + "ã•ã‚“ã€å‘¼ã‚“ã ã‚ã‚“ï¼Ÿ"
 
-	robot.hear /‚¨èI$/, (msg) ->
-		msg.send "‚í‚ñI"
-	robot.hear /‚¨‚©‚í‚èI$/, (msg) ->
-		msg.send "‚í‚ñI"
+	robot.hear /ãŠæ‰‹ï¼$/, (msg) ->
+		msg.send "ã‚ã‚“ï¼"
+	robot.hear /ãŠã‹ã‚ã‚Šï¼$/, (msg) ->
+		msg.send "ã‚ã‚“ï¼"
 		
