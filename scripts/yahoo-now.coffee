@@ -32,7 +32,7 @@ module.exports = (robot) ->
             link: i.link[0]
             pubDate: moment(i.pubDate[0])
           .map (i) ->
-            "#{i.pubDate.format()} : #{i.title} : #{i.link}"
+            "#{i.pubDate.format('L')} : #{i.title} : #{i.link}"
           .join '\n'
         res.send message
     , (e) ->

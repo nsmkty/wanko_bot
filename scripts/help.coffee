@@ -27,21 +27,24 @@ module.exports = (robot) ->
 	robot.respond /help DIRECTMESSAGES$/i, (msg) ->
 		msg.reply """
 			Twitter等で実装されている個人とのチャット機能です。
-			他の人は見ることができません。
+			他の人は見ることができません。個別の相談等にご利用ください
 		"""
 
 	robot.respond /help PRIVATEGROUPS$/i, (msg) ->
 		msg.reply """
-			準備中だわん
+			招待制のチャンネルです。招待された方のみが参加可能です。
+			その為、非公開にしたい情報等はこちらをご利用ください。
 		"""
 
 	robot.respond /help Mentions$/i, (msg) ->
 		msg.reply """
-			準備中だわん
+			相手から自分宛の投稿です。自分宛の投稿は[Recent Mentions]に格納されます。
 		"""
 
 	robot.respond /help Star$/i, (msg) ->
 		msg.reply """
 			スターを付けることで[Starred Items]に格納されます。
 			後から確認したい時等、ログが流れてしまっても後から探しやすくなっています。
+			自身が行わなくてはいけないタスク等にスターをつけておき、完了したものから
+			スターを外す運用を行うことでタスク管理が行えます。
 		"""
