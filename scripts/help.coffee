@@ -2,7 +2,7 @@
 
 module.exports = (robot) ->
 	# Help Command
-	robot.respond /help$/i, (msg) ->
+	robot.respond /help$|(教|おし)えて/i, (msg) ->
 		msg.reply """
 			何について知りたいですか？
 			Helpの後に以下の内容続けて私にMentionsすることで回答しますわん
