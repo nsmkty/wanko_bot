@@ -4,6 +4,7 @@ gm = require("googlemaps");
 
 module.exports = (robot) ->
 	robot.hear /.*/, (msg) ->
+		msg.send msg.envelope.room
 		if _.contains ['general'], msg.envelope.room
 			if robot.adapter.client.getDMByID(msg.message.user.name) ?
 				robot.send {room: msg.message.user.name}, "#generalチャンネルでは発言を控えるわん"
