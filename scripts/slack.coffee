@@ -4,14 +4,14 @@ gm = require("googlemaps");
 
 module.exports = (robot) ->
 	robot.hear /.*/, (msg) ->
-		msg.send msg.envelope.room
-		if _.contains ['general'], msg.envelope.room
-			if robot.adapter.client.getDMByID(msg.message.user.name) ?
-				robot.send {room: msg.message.user.name}, "#generalチャンネルでは発言を控えるわん"
+		if 'general' == msg.envelope.room
+			msg.send msg.envelope.room
+			if robot.adapter.client.getDMByID(userId)?
+				robot.send {room: msg.message.user.name}, "##{msg.envelope.room} チャンネルでは発言を控えるわん"
 			else
 				robot.adapter.client.openDM msg.message.user.name
 				setTimeout =>
-					robot.send {room: msg.message.user.name}, "#generalチャンネルでは発言を控えるわん"
+					robot.send {room: msg.message.user.name}, "##{msg.envelope.room} チャンネルでは発言を控えるわん"
 				, 1000
 		msg.finish();
 	robot.hear /わんこ/i, (msg) ->
