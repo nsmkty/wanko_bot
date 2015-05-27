@@ -5,8 +5,7 @@ gm = require("googlemaps");
 module.exports = (robot) ->
 	robot.hear /.*/, (msg) ->
 		if 'general' == msg.envelope.room
-			msg.send msg.envelope.room
-			msg.send robot.adapter.client.getDMByID(userId)
+			robot.send {room: msg.message.user.name}, "##{msg.envelope.room} チャンネルでは発言を控えるわん"
 			if robot.adapter.client.getDMByID(userId)?
 				robot.send {room: msg.message.user.name}, "##{msg.envelope.room} チャンネルでは発言を控えるわん"
 			else
