@@ -3,17 +3,17 @@
 gm = require("googlemaps");
 
 module.exports = (robot) ->
-	robot.hear /.*/, (msg) ->
-		if 'general' == msg.envelope.room
-			robot.send {room: msg.message.user.name}, "##{msg.envelope.room} チャンネルでは発言を控えるわん"
-			if robot.adapter.client.getDMByID(userId)?
-				robot.send {room: msg.message.user.name}, "##{msg.envelope.room} チャンネルでは発言を控えるわん"
-			else
-				# robot.adapter.client.openDM msg.message.user.name
-				# setTimeout =>
-				# 	robot.send {room: msg.message.user.name}, "##{msg.envelope.room} チャンネルでは発言を控えるわん"
-				# , 1000
-		msg.finish();
+	# robot.hear /.*/, (msg) ->
+	# 	if 'general' == msg.envelope.room
+	# 		robot.send {room: msg.message.user.name}, "##{msg.envelope.room} チャンネルでは発言を控えるわん"
+	# 		if robot.adapter.client.getDMByID(userId)?
+	# 			robot.send {room: msg.message.user.name}, "##{msg.envelope.room} チャンネルでは発言を控えるわん"
+	# 		else
+	# 			robot.adapter.client.openDM msg.message.user.name
+	# 			setTimeout =>
+	# 				robot.send {room: msg.message.user.name}, "##{msg.envelope.room} チャンネルでは発言を控えるわん"
+	# 			, 1000
+	# 	msg.finish();
 	robot.hear /わんこ/i, (msg) ->
 		username = msg.message.user.name
 		msg.reply "@" + username + "さん、呼んだわん？"
