@@ -18,6 +18,9 @@ module.exports = (robot) ->
 		username = msg.message.user.name
 		msg.reply "@" + username + "さん、呼んだわん？"
 		msg.finish();
+	robot.hear /(犬|いぬ)/i (msg) ->
+		msg.reply "お犬様と呼べ！"
+		msg.finish();
 	robot.hear /お(手|て)！$/, (msg) ->
 		msg.send "わん！"
 		msg.finish();
